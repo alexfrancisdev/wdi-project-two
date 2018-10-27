@@ -5,7 +5,6 @@ const postSchema = mongoose.Schema({
   location: String,
   image: String,
   description: String,
-  time: Date, default: Date.now,
   comments: [{
     content: String,
     username: String,
@@ -14,7 +13,8 @@ const postSchema = mongoose.Schema({
   likes: [{
     username: String,
     time: Date
-  }]
+  }],
+  time: { type: Date, default: Date.now }
 });
 
 const postModel = mongoose.model('Post', postSchema);

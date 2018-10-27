@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const postController = require('../controllers/postController');
 const authController = require('../controllers/authController');
 
 router.get('/register', authController.registerFormRoute);
@@ -12,5 +13,8 @@ router.get('/logout', authController.logoutRoute);
 router.get('/', function(req, res) {
   res.render('home');
 });
+
+// INDEX Route
+router.get('/posts', postController.indexRoute);
 
 module.exports = router;

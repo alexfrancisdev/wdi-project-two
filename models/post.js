@@ -5,7 +5,7 @@ const postSchema = mongoose.Schema({
   location: String,
   image: String,
   description: String,
-  time: Date,
+  time: Date, default: Date.now,
   comments: [{
     content: String,
     username: String,

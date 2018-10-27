@@ -1,5 +1,24 @@
-<form class="" action="/login" method="post">
-  <input type="text" name="email" placeholder="Email address">
-  <input type="password" name="password" placeholder="Password">
-  <button>Log in</button>
+<form class="column is-4" action="/login" method="post">
+  <h1>Login</h1>
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control has-icons-left">
+      <input class ="input" type="text" name="email" placeholder="Email address">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Password</label>
+    <div class="control has-icons-left">
+      <input class ="input" type="password" name="password" placeholder="Password">
+      <span class="icon is-small is-left">
+        <i class="fas fa-key"></i>
+      </span>
+    </div>
+  </div>
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
 </form>

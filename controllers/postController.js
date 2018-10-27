@@ -9,6 +9,14 @@ function indexRoute(req, res) {
   });
 }
 
+function showRoute(req, res) {
+  console.log('req.params is', req.params);
+  Post.findById(req.params.id).then(result => {
+    res.render('posts/show', result);
+  });
+}
+
 module.exports = {
-  indexRoute: indexRoute
+  indexRoute: indexRoute,
+  showRoute: showRoute
 };

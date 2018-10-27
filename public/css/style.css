@@ -1,7 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.columns {
+  margin: 0;
+  padding: 0;
+}
+
+.column {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 77px;
+  background-color: white;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  align-items: center;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
 .right {
+  align-items: center;
   text-align: right;
+  margin: 0;
+  padding: 0;
 }
 
 .center {
   text-align: center;
+  margin: 0;
+  padding: 0;
 }

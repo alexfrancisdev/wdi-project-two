@@ -9,7 +9,7 @@ Post.collection.drop();
 const postData = [{
   username: 'alex',
   location: 'Sri Lanka',
-  image: 'https://i.imgur.com/0CLxnnl.jpg',
+  img: 'https://i.imgur.com/0CLxnnl.jpg',
   description: 'Kayaking in the mangroves'
 }];
 

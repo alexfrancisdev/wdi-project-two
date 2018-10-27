@@ -18,6 +18,10 @@ router.get('/', function(req, res) {
 // INDEX Route
 router.get('/posts', postController.indexRoute);
 
+// NEW Route
+router.get('/posts/new', postController.newRoute);
+router.post('/posts', postController.createRoute);
+
 // SHOW Route
 router.get('/posts/:id', postController.showRoute);
 

@@ -16,7 +16,19 @@ function showRoute(req, res) {
   });
 }
 
+function newRoute(req, res, next) {
+  res.render('posts/new');
+  next();
+}
+
+function createRoute(req, res) {
+  Post.create(req.body)
+    .then(result => res.redirect(`/posts/${result._id}`));
+}
+
 module.exports = {
   indexRoute: indexRoute,
-  showRoute: showRoute
+  showRoute: showRoute,
+  newRoute: newRoute,
+  createRoute: createRoute
 };

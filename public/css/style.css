@@ -1,15 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
+
 header {
   height: 77px;
   background-color: white;
   border-bottom: 1px solid rgba(0,0,0,.1);
   align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 nav {
   align-items: center;
   font-size: 25px;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.top {
+  margin-top: 10px;
 }
 
 .logo {
@@ -33,4 +48,16 @@ nav {
 
 .center {
   text-align: center;
+}
+
+.popinfo {
+  background-color: grey !important;
+
+}
+
+.image {
+  background-color: black;
+}
+.photo:hover {
+  opacity: 0.6;
 }

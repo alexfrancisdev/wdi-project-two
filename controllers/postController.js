@@ -25,9 +25,32 @@ function createRoute(req, res) {
     .then(result => res.redirect(`/posts/${result._id}`));
 }
 
+function updateRoute(req, res) {
+  console.log(`Updating post id ${req.params.id}`, req.body);
+  Post.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+      res.redirect('/posts');
+    });
+}
+
+function editRoute(req, res) {
+  Post.findById(req.params.id)
+    .then(result => {
+      res.render('posts/edit', result);
+    });
+}
+
+function deleteRoute(req, res) {
+  Post.findByIdAndDelete(req.params.id)
+    .then(() => res.redirect('/posts'));
+}
+
 module.exports = {
   indexRoute: indexRoute,
   showRoute: showRoute,
   newRoute: newRoute,
-  createRoute: createRoute
+  createRoute: createRoute,
+  updateRoute: updateRoute,
+  editRoute: editRoute,
+  deleteRoute: deleteRoute
 };

@@ -1,7 +1,7 @@
 <p class="content"><%= posts.length %> posts added so far!</p>
 <div class="columns is-multiline is-mobile">
   <% posts.forEach(post => { %>
-    <div class="column is-4-desktop is-4-tablet is-6-mobile">
+    <div class="column is-3-desktop is-4-tablet is-6-mobile">
       <figure class="image is-square">
         <a href = "/posts/<%= post.id %>">
           <img src="<%= post.img %>"

@@ -7,6 +7,17 @@
     <h2><%= description %></h2>
     <h3><%= location %></h3>
     <h4>Date Posted <%= time %></h4>
-
+    <% if(locals.isLoggedIn) { %>
+      <div class="section">
+        <div>
+          <a class="button" href="/posts/<%= id %>/edit">Edit</a>
+        </div>
+        <div>
+          <form action="/posts/<%= id %>?_method=DELETE" method="post">
+            <button class="button is-danger">DELETE</button>
+          </form>
+        </div>
+      </div>
+    <% } %>
   </div>
 </div>

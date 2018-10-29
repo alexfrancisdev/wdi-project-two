@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const postController = require('../controllers/postController');
 const authController = require('../controllers/authController');
+const commentsController = require('../controllers/commentsController');
 
 router.get('/register', authController.registerFormRoute);
 router.post('/register', authController.registerRoute);
@@ -33,5 +34,11 @@ router.get('/posts/:id/edit', postController.editRoute);
 
 // DELETE Route
 router.delete('/posts/:id', postController.deleteRoute);
+
+// Comment CREATE route
+router.post('/posts/:postId/comments', commentsController.createRoute);
+
+// Comment DELETE route
+router.delete('/posts/:postId/comments/:commentIs',commentsController.deleteRoute);
 
 module.exports = router;

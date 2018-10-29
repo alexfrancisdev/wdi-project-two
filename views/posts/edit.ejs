@@ -1,0 +1,34 @@
+<form class="column is-4 is-centered" action="/posts" method="post">
+  <h1>Edit Your Post</h1>
+  <input type="hidden" name="username" value="<%= locals.currentUser.username %>">
+  <div class="field">
+    <label class="label">Image URL</label>
+    <div class="control has-icons-left">
+      <input class ="input" type="text" name="img" value="<%= img %>" placeholder="Enter URL">
+      <span class="icon is-small is-left">
+        <i class="fas fa-camera"></i>
+      </span>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Description</label>
+    <div class="control has-icons-left">
+      <textarea class ="input" type="text" name="description" value="<%= description %>" placeholder="Description" rows="10"></textarea>
+      <span class="icon is-small is-left">
+        <i class="fas fa-pen"></i>
+      </span>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Location</label>
+    <div class="control has-icons-left">
+      <input class ="input" type="text" name="location" value="<%= location %>" placeholder="Location">
+      <span class="icon is-small is-left">
+        <i class="fas fa-map-marker-alt"></i>
+      </span>
+    </div>
+  </div>
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
+</form>

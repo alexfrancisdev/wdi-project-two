@@ -18,6 +18,13 @@
           </form>
         </div>
       </div>
+      <div>
+        <form method="POST" action="/posts/<%= _id %>/comments">
+          <textarea name="content"></textarea>
+          <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
+          <button>Post</button>
+        </form>
     <% } %>
   </div>
+</div>
 </div>

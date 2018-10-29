@@ -8,11 +8,11 @@ const postSchema = mongoose.Schema({
   comments: [{
     content: String,
     username: String,
-    time: Date
+    time: { type: Date, default: Date.now }
   }],
   likes: [{
     username: String,
-    time: Date
+    time: { type: Date, default: Date.now }
   }],
   time: { type: Date, default: Date.now }
 });

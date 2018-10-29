@@ -12,14 +12,23 @@ nav {
   font-size: 25px;
 }
 
+.logo {
+  font-family: 'Pacifico', cursive;
+}
+
 .left {
   display: flex;
   align-items: center;
+  color: black;
 }
 
 .right {
   align-items: center;
   text-align: right;
+}
+
+.right i {
+  margin-left: 25px;
 }
 
 .center {

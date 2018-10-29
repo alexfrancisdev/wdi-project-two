@@ -23,8 +23,12 @@ body {
   background-color: #fafafa;
 }
 
+.body {
+  height: -webkit-fill-available;
+}
+
 .top {
-  margin-top: 10px;
+  margin-top: 45px;
 }
 
 .logo {
@@ -55,9 +59,28 @@ body {
 
 }
 
+.display {
+  background-color: white;
+  border: 1px solid rgba(0,0,0,.1);
+  padding: 0 !important;
+  height: fit-content;
+}
+
+.showimage {
+  padding: 0 !important;
+}
+
+.user-details * {
+
+}
+
 .image {
   background-color: black;
 }
 .photo:hover {
   opacity: 0.6;
+}
+
+.pac-container:after{
+    content:none !important;
 }

@@ -22,7 +22,7 @@
   <div class="field">
     <label class="label">Location</label>
     <div class="control has-icons-left">
-      <input class="input" id="location-search" type="text" name="location" placeholder="Location">
+      <input class="input" id="places-autocomplete" type="text" name="location" placeholder="Location">
       <span class="icon is-small is-left">
         <i class="fas fa-map-marker-alt"></i>
       </span>
@@ -34,10 +34,23 @@
 </form>
 
 <script>
-  function activatePlacesSearch(){
-    let input = document.getElementbyId('location-search');
-    let autocomplete = new google.maps.places.Autocomplete(input);
+  function initAutocomplete() {
+    var input = document.getElementById('places-autocomplete');
+    var searchBox = new google.maps.places.SearchBox(input);
+
+    searchBox.addListener('places_changed', function() {
+      var places = searchBox.getPlaces();
+
+      if(places.length == 0){
+        return;
+      }
+      places.forEach(function(place){
+        if(!place.geometry) {
+          console.log("Returned place contains no geometry");
+          return;
+        }
+      });
+    });
   }
 </script>
-
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIx3ZddZj5uAI1B6svkwHjhYr0q_Dx0_E&libraries=places&callback=activatePlacesSearch"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIx3ZddZj5uAI1B6svkwHjhYr0q_Dx0_E&libraries=places&callback=initAutocomplete" async defer></script>

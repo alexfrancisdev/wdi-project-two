@@ -1,12 +1,12 @@
-<div class="column top is-10 columns is-centered">
-  <div class="column is-8">
-    <img src="<%= img %>"/>
+<div class=" display column top is-9 columns is-centered">
+  <div class="showimage column is-8">
+    <img class ="showimage" src="<%= img %>"/>
   </div>
-  <div class="column is-4">
-    <a href="#"<h1><%= username %></h1></a>
-    <h2><%= description %></h2>
-    <h3><%= location %></h3>
-    <h4>Date Posted <%= time %></h4>
+  <div class="user-details columns is-multiline column is-4">
+    <a  class="column is-12" href="#"<h1><%= username %></h1></a>
+    <h2 class="column is-12"><%= description %></h2>
+    <h3 class="column is-12"><%= location %></h3>
+    <h4 class="column is-12">Date Posted <%= time.toDateString() %></h4>
     <% if(locals.isLoggedIn) { %>
       <div class="section">
         <div>

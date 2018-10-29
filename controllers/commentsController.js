@@ -8,7 +8,7 @@ function createRoute(req, res) {
       console.log('post comments is: ', post.comments);
       post.comments.push(req.body);
       console.log('comment made');
-      post.save().then(() => res.redirect('/posts'));
+      post.save().then(() => res.redirect(`/posts/${req.params.postId}`));
     });
 }
 

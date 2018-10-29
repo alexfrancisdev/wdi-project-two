@@ -18,8 +18,13 @@
           </form>
         </div>
       </div>
+      <% comments.forEach(comment => { %>
+        <div>
+          <span><%= comment.content %></span>
+        </div>
+      <% }) %>
       <div>
-        <p>Comment form</p>
+        <p>Comments</p>
         <form method="POST" action="/posts/<%= _id %>/comments">
           <textarea name="content"></textarea>
           <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>

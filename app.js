@@ -20,6 +20,9 @@ const env = require('./config/environment');
 mongoose.connect(env.dbUri);
 
 const router = require('./config/routes');
+
+const auth = require('./lib/auth');
+app.use('*', auth.checkAuthStatus);
 app.use(router);
 
 app.listen(env.port, () => console.log(`Express is listening on port ${env.port}`));

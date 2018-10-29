@@ -9,10 +9,14 @@
   <div class="dropdown-menu" role="menu">
     <div class="dropdown-content">
       <div class="dropdown-item">
+        <% if(locals.isLoggedIn) { %>
+        <a href="/posts/new"><p>New Post</p></a>
+        <a href="#"><p>Your Account</p></a>
+        <a href="/logout">Log Out <%= locals.currentUser.username %></a>
+      <% } else { %>
         <a href="/login"><p>Login</p></a>
         <a href="/register"><p>Register</p></a>
-        <a href="#"><p>Your Account</p></a>
-        <a href="/posts/new"><p>New Post</p></a>
+      <% } %>    
       </div>
     </div>
   </div>

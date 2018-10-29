@@ -1,5 +1,6 @@
 <form class="column is-4 is-centered" action="/posts" method="post">
   <h1>Upload a Photo</h1>
+  <input type="hidden" name="username" value="<%= locals.currentUser.username %>">
   <div class="field">
     <label class="label">Image URL</label>
     <div class="control has-icons-left">

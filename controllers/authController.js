@@ -21,8 +21,10 @@ function loginRoute(req, res) {
   User.findOne({ email: req.body.email })
     .then(result => {
       if (!result) {
+        console.log('Login denied');
         res.redirect('/login');
       } else {
+        console.log('Login success');
         req.session.userId = result._id;
         res.redirect('/');
       }

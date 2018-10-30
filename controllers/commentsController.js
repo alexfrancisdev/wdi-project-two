@@ -12,8 +12,9 @@ function deleteRoute(req, res) {
   Post.findById(req.params.postId)
     .then(post => {
       post.comments.id(req.params.commentId).remove();
+      console.log('delete running');
       post.save()
-        .then(() => res.redirect(`/posts/${req.params.postId}`));
+        .then(() => res.redirect(`/posts/${post._id}`));
     });
 }
 

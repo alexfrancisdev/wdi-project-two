@@ -40,6 +40,6 @@ router.delete('/posts/:id', secureRoute, postController.deleteRoute);
 router.post('/posts/:postId/comments', secureRoute, commentsController.createRoute);
 
 // Comment DELETE route
-router.delete('/posts/:postId/comments/:commentIs', secureRoute, commentsController.deleteRoute);
+router.delete('/posts/:postId/comments/:commentId', secureRoute, commentsController.deleteRoute);
 
 module.exports = router;

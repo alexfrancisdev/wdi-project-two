@@ -47,4 +47,6 @@ router.delete('/posts/:postId/comments/:commentId', secureRoute, commentsControl
 // User SHOW route
 router.get('/users/:id', userController.userShowRoute);
 
+
+
 module.exports = router;

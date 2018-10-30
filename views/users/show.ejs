@@ -1,11 +1,17 @@
-<h1><%= username %></h1>
-<h1>Posts I have commented on</h1>
+<section class="top">
+  <h1 class="title"><%= username %></h1>
+  <h1>Posts I have commented on</h1>
+  <% addedPosts.sort((a,b) => a.time < b.time).forEach(post => { %>
+    <h1><%= post.time %></h1>
+    <img src="<%= post.img %>" alt="">
+  <% }) %>
 
-<% comments.forEach(comment => { %>
-  <p><strong><%= comment.user %></strong></p>
-<% })%>
+  <% comments.forEach(comment => { %>
+    <p><strong><%= comment.user %></strong></p>
+    <% })%>
 
-<h1>Posts I have added </h1>
-<% addedPosts.forEach(post => { %>
-    <p><strong><%= post.description %></strong></p>
-<% }) %>
+    <h1>Posts I have added </h1>
+    <% addedPosts.forEach(post => { %>
+      <p><strong><%= post.description %></strong></p>
+      <% }) %>
+</section>

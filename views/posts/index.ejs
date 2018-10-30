@@ -1,6 +1,6 @@
 <div class="column is-8 left"<h1>Explore</h1></div>
 <div class="columns column is-8 is-centered is-multiline is-mobile">
-  <% posts.forEach(post => { %>
+  <% posts.sort((a,b) => a.time < b.time).forEach(post => { %>
     <div class="column is-4-desktop is-4-tablet is-6-mobile">
       <figure class="image is-square">
         <a href = "/posts/<%= post.id %>">

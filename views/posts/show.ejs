@@ -3,7 +3,7 @@
     <img class ="showimage" src="<%= img %>"/>
   </div>
   <div class="user-details columns is-multiline column is-4">
-    <a  class="column is-12" href="#"<h1><%= username %></h1></a>
+    <a  class="column is-12" href="#"<h1> <%= addedBy.username %> %></h1></a>
     <h2 class="column is-12"><%= description %></h2>
     <h3 class="column is-12"><%= location %></h3>
     <h4 class="column is-12">Date Posted <%= time.toDateString() %></h4>
@@ -33,4 +33,7 @@
     <% } %>
   </div>
 </div>
+<% if(locals.isLoggedIn) { %>
+  <p>BINGO!</p>
+  <% } %>
 </div>

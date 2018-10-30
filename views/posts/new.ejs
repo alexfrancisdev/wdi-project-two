@@ -1,6 +1,8 @@
 <form class="column is-4 is-centered" action="/posts" method="post">
   <h1>Upload a Photo</h1>
-  <input type="hidden" name="username" value="<%= locals.currentUser.username %>">
+
+  <input type="text" name="addedBy" value='<%= locals.currentUser._id%>' hidden>
+  
   <div class="field">
     <label class="label">Image URL</label>
     <div class="control has-icons-left">
@@ -32,25 +34,3 @@
     <button class="button is-link">Submit</button>
   </div>
 </form>
-
-<script>
-  function initAutocomplete() {
-    var input = document.getElementById('places-autocomplete');
-    var searchBox = new google.maps.places.SearchBox(input);
-
-    searchBox.addListener('places_changed', function() {
-      var places = searchBox.getPlaces();
-
-      if(places.length == 0){
-        return;
-      }
-      places.forEach(function(place){
-        if(!place.geometry) {
-          console.log("Returned place contains no geometry");
-          return;
-        }
-      });
-    });
-  }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIx3ZddZj5uAI1B6svkwHjhYr0q_Dx0_E&libraries=places&callback=initAutocomplete" async defer></script>

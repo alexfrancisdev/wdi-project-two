@@ -7,6 +7,18 @@ const userSchema = mongoose.Schema({
   profileImg: String
 });
 
+userSchema.virtual('comments', {
+  ref: 'Post',
+  localField: '_id',
+  foreignField: 'comments.username'
+});
+
+userSchema.virtual('addedPosts', {
+  ref: 'Post',
+  localField: '_id',
+  foreignField: 'addedBy'
+});
+
 const userModel = mongoose.model('User', userSchema);
 
 module.exports = userModel;

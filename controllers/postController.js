@@ -10,7 +10,7 @@ function indexRoute(req, res) {
 }
 
 function showRoute(req, res) {
-  Post.findById(req.params.id).then(result => {
+  Post.findById(req.params.id).populate('comments.username addedBy').then(result => {
     res.render('posts/show', result);
   });
 }

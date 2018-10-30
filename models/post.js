@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const postSchema = mongoose.Schema({
-  username: String,
   location: String,
   img: String,
   description: String,
@@ -14,6 +13,7 @@ const postSchema = mongoose.Schema({
     username: String,
     time: { type: Date, default: Date.now }
   }],
+  addedBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
   time: { type: Date, default: Date.now }
 });
 

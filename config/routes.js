@@ -2,6 +2,7 @@ const router = require('express').Router();
 const postController = require('../controllers/postController');
 const authController = require('../controllers/authController');
 const commentsController = require('../controllers/commentsController');
+const secureRoute = require('../lib/secureRoute');
 
 router.get('/register', authController.registerFormRoute);
 router.post('/register', authController.registerRoute);
@@ -20,25 +21,25 @@ router.get('/', function(req, res) {
 router.get('/posts', postController.indexRoute);
 
 // NEW Route
-router.get('/posts/new', postController.newRoute);
-router.post('/posts', postController.createRoute);
+router.get('/posts/new', secureRoute, postController.newRoute);
+router.post('/posts', secureRoute, postController.createRoute);
 
 // SHOW Route
 router.get('/posts/:id', postController.showRoute);
 
 // UPDATE route
-router.put('/posts/:id', postController.updateRoute);
+router.put('/posts/:id', secureRoute, postController.updateRoute);
 
 // EDIT route
-router.get('/posts/:id/edit', postController.editRoute);
+router.get('/posts/:id/edit', secureRoute, postController.editRoute);
 
 // DELETE Route
-router.delete('/posts/:id', postController.deleteRoute);
+router.delete('/posts/:id', secureRoute, postController.deleteRoute);
 
 // Comment CREATE route
-router.post('/posts/:postId/comments', commentsController.createRoute);
+router.post('/posts/:postId/comments', secureRoute, commentsController.createRoute);
 
 // Comment DELETE route
-router.delete('/posts/:postId/comments/:commentIs',commentsController.deleteRoute);
+router.delete('/posts/:postId/comments/:commentIs', secureRoute, commentsController.deleteRoute);
 
 module.exports = router;

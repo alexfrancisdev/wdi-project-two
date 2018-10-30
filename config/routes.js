@@ -1,8 +1,10 @@
-const router = require('express').Router();
 const postController = require('../controllers/postController');
 const authController = require('../controllers/authController');
 const commentsController = require('../controllers/commentsController');
 const secureRoute = require('../lib/secureRoute');
+const userController = require('../controllers/userController');
+
+const router = require('express').Router();
 
 router.get('/register', authController.registerFormRoute);
 router.post('/register', authController.registerRoute);
@@ -41,5 +43,8 @@ router.post('/posts/:postId/comments', secureRoute, commentsController.createRou
 
 // Comment DELETE route
 router.delete('/posts/:postId/comments/:commentId', secureRoute, commentsController.deleteRoute);
+
+// User SHOW route
+router.get('/users/:id', userController.userShowRoute);
 
 module.exports = router;

@@ -4,7 +4,7 @@ function userShow(req, res, next) {
   User
     .findById(req.params.id).populate('comments addedPosts').then(user => {
       console.log(user.comments);
-      res.render('pages/profile', user);
+      res.render('users/show', user);
     })
     .catch(err => {
       console.log('There was an error', err);
@@ -13,5 +13,5 @@ function userShow(req, res, next) {
 }
 
 module.exports = {
-  show: userShow
+  userShowRoute: userShow
 };

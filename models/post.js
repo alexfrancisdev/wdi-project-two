@@ -6,11 +6,11 @@ const postSchema = mongoose.Schema({
   description: String,
   comments: [{
     content: String,
-    username: String,
+    user: { type: mongoose.Schema.ObjectId, ref: 'User' },
     time: { type: Date, default: Date.now }
   }],
   likes: [{
-    username: String,
+    user: { type: mongoose.Schema.ObjectId, ref: 'User' },
     time: { type: Date, default: Date.now }
   }],
   addedBy: { type: mongoose.Schema.ObjectId, ref: 'User' },

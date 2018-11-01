@@ -287,3 +287,28 @@ input::placeholder {
   width: 152px;
   border-radius: 50%;
 }
+
+.user {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 200;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.show {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.edit-user {
+  background-color: transparent;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  padding: 5px 9px;
+  margin-left: 20px;
+}

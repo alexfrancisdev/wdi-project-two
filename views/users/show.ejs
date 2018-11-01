@@ -1,19 +1,18 @@
-<div class="columns column is-8 left">
+<div class="columns column is-8 left show">
   <div class="columns column is-4 is-centered">
     <img class="profileImg" src="<%= profileImg %>">
   </div>
   <div class="column is-8">
-  <span class="title"><%= username %>
+  <span class="user"><%= username %>
   <% if(locals.isLoggedIn) { %>
     <%   if (locals.currentUser.username === username) {%>
-      <a href="/users/<%= _id %>/edit"><button type="button" name="button">Edit Profile</button></a>
+      <button class="edit-user"><a href="/users/<%= _id %>/edit">Edit Profile</a></button>
     <% } else { %>
-      <a href="#"><button type="button" name="button">Follow</button></a>
   <% } %>
   <% } %>
   </span>
   <% if (name) { %>
-    <p><%= name %>
+    <p class="name"><%= name %>
   <% } %>
   <% if (bio) { %>
     <p><%= bio %>

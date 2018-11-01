@@ -5,14 +5,30 @@
   <div class="post-details is-multiline column is-4">
     <div  class="topdetails">
       <div class="pic-container">
-        <img src="<%= addedBy.profileImg %>" style="height:44px; width:44px; border-radius:50%;">
+        <a href="/users/<%= addedBy.id %>"><img src="<%= addedBy.profileImg %>" style="height:44px; width:44px; border-radius:50%;"></a>
       </div>
-      <div class="">
+      <div class="user-details">
         <h2><a href="/users/<%= addedBy.id %>"><%= addedBy.username %></a></h2>
         <h3><%= location %></h3>
       </div>
     </div>
-    <h2 class="column is-12"><%= description %></h2>
+    <div class="comment-container">
+      <ul>
+        <li>
+          <span class="comment username"><%= addedBy.username %></span>
+          <span class="comment"><%= description %></span>
+        </li>
+          <% comments.forEach(comment => { %>
+        <li>
+          <span class="comment username"><%= comment.user.username %></span>
+          <span class="comment"><%= comment.content %></span>
+          <form class="delete-form" method="POST" action="/posts/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
+            <button class="delete-button">X</button>
+          </form>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
     <h4 class="column is-12"><%= time.toDateString() %></h4>
     <% if(locals.isLoggedIn) { %>
       <div class="section">
@@ -26,20 +42,12 @@
         </div>
       </div>
       <ul>
-        <% comments.forEach(comment => { %>
-          <li>
-            <span><%= comment.user.username %></span>
-            <span><%= comment.content %></span>
-            <form class="delete-form" method="POST" action="/posts/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
-              <button class="delete-button">X</button>
-            </form>
-          </li>
-          <% }) %>
         </ul>
         <div>
-          <form method="POST" action="/posts/<%= _id %>/comments">
+          <form id="comment-form" method="POST" action="/posts/<%= _id %>/comments">
             <input placeholder="Comment" name="content">
             <input name='user' value='<%= locals.currentUser._id %>' hidden/>
+            <button></button>
           </form>
           <% } %>
         </div>

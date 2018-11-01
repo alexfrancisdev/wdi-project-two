@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
+* {
+  color: #262626;
+}
 
 header {
   height: 77px;
@@ -79,6 +82,18 @@ flex-direction: column;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid rgba(0,0,0,.1);
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.user-details {
+  padding-left: 10px;
+}
+
+.user-details a {
+  color: #262626;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .pic-container {
@@ -87,6 +102,16 @@ flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.comment {
+  font-size: 14px;
+}
+
+.username {
+  color: #262626;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .image {

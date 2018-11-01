@@ -28,7 +28,7 @@ body {
 }
 
 .top {
-  margin-top: 45px;
+  margin-top: 45px !important;
 }
 
 .logo {
@@ -70,8 +70,23 @@ body {
   padding: 0 !important;
 }
 
-.user-details * {
+.post-details {
+display: flex;
+flex-direction: column;
+}
 
+.topdetails {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.pic-container {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image {
@@ -83,4 +98,10 @@ body {
 
 .pac-container:after{
     content:none !important;
+}
+
+.profileImg {
+  height: 152px;
+  width: 152px;
+  border-radius: 50%;
 }

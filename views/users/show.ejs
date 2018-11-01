@@ -1,17 +1,35 @@
-<section class="top">
-  <h1 class="title"><%= username %></h1>
-  <h1>Posts I have commented on</h1>
-  <% addedPosts.sort((a,b) => a.time < b.time).forEach(post => { %>
-    <h1><%= post.time %></h1>
-    <img src="<%= post.img %>" alt="">
+<div class="columns column is-8 left">
+  <div class="columns column is-4 is-centered">
+    <img class="profileImg" src="<%= profileImg %>">
+  </div>
+  <div class="column is-8">
+  <span class="title"><%= username %>
+  <% if(locals.isLoggedIn) { %>
+    <%   if (locals.currentUser.username === username) {%>
+      <a href="/users/<%= _id %>/edit"><button type="button" name="button">Edit Profile</button></a>
+    <% } else { %>
+      <a href="#"><button type="button" name="button">Follow</button></a>
+  <% } %>
+  <% } %>
+  </span>
+  <% if (name) { %>
+    <p><%= name %>
+  <% } %>
+  <% if (bio) { %>
+    <p><%= bio %>
+  <% } %>
+  </div>
+</div>
+
+<div class="columns column is-8 is-centered is-multiline is-mobile">  <% addedPosts.forEach(post => { %>
+  <div class="column is-4-desktop is-4-tablet is-6-mobile">
+    <figure class="image is-square">
+      <a href = "/posts/<%= post.id %>">
+        <img class="photo" src="<%= post.img %>">
+      </a>
+      <div class="popinfo">
+      </div>
+    </figure>
+  </div>
   <% }) %>
-
-  <% comments.forEach(comment => { %>
-    <p><strong><%= comment.user %></strong></p>
-    <% })%>
-
-    <h1>Posts I have added </h1>
-    <% addedPosts.forEach(post => { %>
-      <p><strong><%= post.description %></strong></p>
-      <% }) %>
-</section>
+</div>

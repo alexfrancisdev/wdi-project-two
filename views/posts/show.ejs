@@ -1,12 +1,19 @@
-<div class=" display column top is-9 columns is-centered">
+<div class="top display column top is-9 columns is-centered">
   <div class="showimage column is-8">
     <img class ="showimage" src="<%= img %>"/>
   </div>
-  <div class="user-details columns is-multiline column is-4">
-    <a  class="column is-12" href="/users/<%= addedBy.id %>"<h1> <%= addedBy.username %> %></h1></a>
+  <div class="post-details is-multiline column is-4">
+    <div  class="topdetails">
+      <div class="pic-container">
+        <img src="<%= addedBy.profileImg %>" style="height:44px; width:44px; border-radius:50%;">
+      </div>
+      <div class="">
+        <h2><a href="/users/<%= addedBy.id %>"><%= addedBy.username %></a></h2>
+        <h3><%= location %></h3>
+      </div>
+    </div>
     <h2 class="column is-12"><%= description %></h2>
-    <h3 class="column is-12"><%= location %></h3>
-    <h4 class="column is-12">Date Posted <%= time.toDateString() %></h4>
+    <h4 class="column is-12"><%= time.toDateString() %></h4>
     <% if(locals.isLoggedIn) { %>
       <div class="section">
         <div>
@@ -31,14 +38,10 @@
         </ul>
         <div>
           <form method="POST" action="/posts/<%= _id %>/comments">
-            <textarea placeholder="Comment" name="content"></textarea>
+            <input placeholder="Comment" name="content">
             <input name='user' value='<%= locals.currentUser._id %>' hidden/>
-            <button>Post</button>
           </form>
           <% } %>
         </div>
       </div>
-      <% if(locals.isLoggedIn) { %>
-        <p>BINGO!</p>
-        <% } %>
-      </div>
+    </div>

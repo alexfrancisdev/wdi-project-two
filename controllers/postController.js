@@ -2,10 +2,7 @@ const Post = require('../models/post');
 
 function indexRoute(req, res) {
   Post.find().then(function(result) {
-    const postObject = {
-      posts: result
-    };
-    res.render('posts/index', postObject);
+    res.render('posts/index', { posts: result, options: {sort: '-time'} } );
   });
 }
 

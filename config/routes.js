@@ -47,6 +47,10 @@ router.delete('/posts/:postId/comments/:commentId', secureRoute, commentsControl
 // User SHOW route
 router.get('/users/:id', userController.userShowRoute);
 
+// User UPDATE route
+router.put('/users/:id', secureRoute, userController.userUpdateRoute);
 
+// User EDIT route
+router.get('/users/:id/edit', secureRoute, userController.userEditRoute);
 
 module.exports = router;

@@ -1,4 +1,14 @@
 {
+  "name": "wdi-project-2",
+  "version": "1.0.0",
+  "description": "An Express CRUD App",
+  "main": "app.js",
+  "license": "MIT",
+  "scripts": {
+    "seed": "node db/create-data",
+    "start": "node app",
+    "start:dev": "nodemon"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",

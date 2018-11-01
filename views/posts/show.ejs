@@ -14,7 +14,7 @@
             <%   if (locals.currentUser.username === addedBy.username) {%>
               <div class="buttons">
                 <div>
-                  <a href="/posts/<%= id %>/edit">Edit</a>
+                  <a id="edit-button" href="/posts/<%= id %>/edit">Edit</a>
                 </div>
                 <div>
                   <form action="/posts/<%= id %>?_method=DELETE" method="post">
@@ -57,7 +57,7 @@
             <% if(locals.isLoggedIn) { %>
               <div>
                     <form id="comment-form" method="POST" action="/posts/<%= _id %>/comments">
-                      <input id="comment-box" placeholder="Add a comment..." name="content">
+                      <input id="comment-box" placeholder="Add a comment..." name="content" autocomplete="off">
                       <input name='user' value='<%= locals.currentUser._id %>' hidden/>
                       <button hidden></button>
                     </form>

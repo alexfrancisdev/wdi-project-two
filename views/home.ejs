@@ -1,5 +1,9 @@
 <% if(locals.isLoggedIn) { %>
   <h1 class="title">News Feed to appear here</h1>
   <% } else{ %>
-    <h1 class="title">Login or Make an Account</h1>
+    <div class="map-container">
+      <div class="map-left"><p class="fix">Adventures worth sharing</p></div>
+      <div class="map-center"><i class="fas fa-globe-americas"></i></div>
+      <div class="map-right"><p class="fix"><a href="/register">Create an account</a> or <a href="/login">login</a> to start exploring</div>
+    </div>
     <% } %>

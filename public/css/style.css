@@ -1,7 +1,81 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 
 * {
   color: #262626;
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.map-container {
+  display: flex;
+  margin-top: 100px;
+  font-size: 20px;
+}
+
+.map-left{
+  width: 20vw;
+  height: 40vh;
+  transform: skew(-20deg) rotate(-20deg);
+  background: #ff6c5f;
+  margin-right: 5%;
+}
+
+.map-center{
+  width: 20vw;
+  height: 40vh;
+  transform: skew(20deg) rotate(20deg);
+  background: #ffc168;
+  margin-right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-right{
+  width: 20vw;
+  height: 40vh;
+  transform: skew(-20deg) rotate(-20deg);
+  background: #2dde98;
+}
+
+.fix {
+  /* transform: skew(20deg) rotate(20deg); */
+  margin-top: 20%;
+  margin-left: 12%;
+  letter-spacing: -2px;
+  width: 80%;
+  color: white;
+  font-weight: 700;
+  font-size: 35px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.fix a {
+  text-decoration: underline;
+  color: rgb(73, 80, 78);
+}
+
+.fa-globe-americas {
+  color: white;
+  font-size: 200px;
+}
+
+.fa-globe-americas:hover {
+  animation: spin 1s infinite;
+  animation-timing-function: ease-out;
+}
+
+.fa-compass:hover {
+  animation: spin 0.5s 1;
+  animation-timing-function: ease-in-out;
+}
+
+a {
+  color: inherit;
 }
 
 header {
@@ -16,6 +90,12 @@ header {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+.fa-compass {
+  color
+}
+
+
 
 nav {
   align-items: center;
@@ -72,6 +152,7 @@ body {
 .showimage {
   padding: 0 !important;
   height: auto;
+  max-height: 70vh;
   margin: auto;
 }
 
@@ -131,6 +212,11 @@ body {
   word-break: break-word;
 }
 
+.comment-top ul {
+  overflow-y: scroll;
+  height: 30vh;
+}
+
 .comment-bottom h4 {
   border-bottom: 1px solid rgba(0,0,0,.1);
   padding: 0 0 10px 0;
@@ -142,10 +228,35 @@ body {
   margin-top: 10px;
 }
 
+#comment-box::placeholder {
+  font-size: 14px;
+}
+
+#comment-box:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #999;
+}
+
 .delete-button {
   border: 0;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
+  color: #999;
+}
+
+.delete-button:hover {
+  color: #262626;
+}
+
+#edit-button {
+  color: #999;
+}
+
+#edit-button:hover {
+  color: #262626;
 }
 
 .username {

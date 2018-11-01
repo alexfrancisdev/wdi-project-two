@@ -1,6 +1,11 @@
 <header class="columns  is-centered">
   <nav class="columns column is-9">
-    <a class="column is-4" href="/"><span class="left"><i class="far fa-map"></i>|<p class="logo">travelgram</p></span></a>
+    <% if(!locals.isLoggedIn) { %>
+    <a class="column is-4" href="/">
+      <%} else { %>
+    <a class="column is-4" href="/posts">
+    <%  } %>
+    <span class="left"><i class="far fa-map"></i>|<p class="logo">travelgram</p></span></a>
     <span class="column is-4 center"></span>
     <span class="column is-4 right"><a href="/posts"<i class="far fa-compass"></i></a><i class="far fa-heart"></i><div class="dropdown is-hoverable is-right">
   <div class="dropdown-trigger">

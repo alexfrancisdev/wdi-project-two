@@ -66,16 +66,19 @@ body {
   background-color: white;
   border: 1px solid rgba(0,0,0,.1);
   padding: 0 !important;
-  height: fit-content;
+  height: fit-content !important;
 }
 
 .showimage {
   padding: 0 !important;
+  height: auto;
+  margin: auto;
 }
 
 .post-details {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  /* height: fit-content; */
 }
 
 .topdetails {
@@ -88,12 +91,19 @@ flex-direction: column;
 
 .user-details {
   padding-left: 10px;
+  width:-webkit-fill-available;
 }
 
 .user-details a {
   color: #262626;
   font-weight: 600;
   font-size: 14px;
+}
+
+.user-details h2 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 .pic-container {
@@ -104,14 +114,50 @@ flex-direction: column;
   justify-content: center;
 }
 
+.comment-delete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
 .comment {
   font-size: 14px;
+  word-break: break-word;
+}
+
+.comment-bottom h4 {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  padding: 0 0 10px 0;
+}
+
+#comment-box {
+  width: -webkit-fill-available;
+  border: none;
+  margin-top: 10px;
+}
+
+.delete-button {
+  border: 0;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .username {
   color: #262626;
   font-weight: 600;
   font-size: 14px;
+}
+
+.date {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #999;
 }
 
 .image {
@@ -122,7 +168,7 @@ flex-direction: column;
 }
 
 .pac-container:after{
-    content:none !important;
+  content:none !important;
 }
 
 .profileImg {

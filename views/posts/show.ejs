@@ -8,48 +8,61 @@
         <a href="/users/<%= addedBy.id %>"><img src="<%= addedBy.profileImg %>" style="height:44px; width:44px; border-radius:50%;"></a>
       </div>
       <div class="user-details">
-        <h2><a href="/users/<%= addedBy.id %>"><%= addedBy.username %></a></h2>
-        <h3><%= location %></h3>
-      </div>
-    </div>
-    <div class="comment-container">
-      <ul>
-        <li>
-          <span class="comment username"><%= addedBy.username %></span>
-          <span class="comment"><%= description %></span>
-        </li>
-          <% comments.forEach(comment => { %>
-        <li>
-          <span class="comment username"><%= comment.user.username %></span>
-          <span class="comment"><%= comment.content %></span>
-          <form class="delete-form" method="POST" action="/posts/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
-            <button class="delete-button">X</button>
-          </form>
-        </li>
-        <% }) %>
-      </ul>
-    </div>
-    <h4 class="column is-12"><%= time.toDateString() %></h4>
-    <% if(locals.isLoggedIn) { %>
-      <div class="section">
-        <div>
-          <a class="button" href="/posts/<%= id %>/edit">Edit</a>
+        <h2>
+          <a href="/users/<%= addedBy.id %>"><%= addedBy.username %></a>
+          <% if(locals.isLoggedIn) { %>
+            <%   if (locals.currentUser.username === addedBy.username) {%>
+              <div class="buttons">
+                <div>
+                  <a href="/posts/<%= id %>/edit">Edit</a>
+                </div>
+                <div>
+                  <form action="/posts/<%= id %>?_method=DELETE" method="post">
+                    <button class="delete-button">x</button>
+                  </form>
+                </div>
+              </div>
+              <% } %>
+              <% } %>
+            </h2>
+            <h3><%= location %></h3>
+          </div>
         </div>
-        <div>
-          <form action="/posts/<%= id %>?_method=DELETE" method="post">
-            <button class="button is-danger">DELETE</button>
-          </form>
+        <div class="comment-container">
+          <div class="comment-top">
+            <ul>
+              <li>
+                <span class="comment username"><%= addedBy.username %></span>
+                <span class="comment"><%= description %></span>
+              </li>
+              <% comments.forEach(comment => { %>
+                <li class="comment-delete">
+                  <div>
+                    <a href="/users/<%= comment.user.id %>"><span class="comment username"><%= comment.user.username %></span></a>
+                    <span class="comment"><%= comment.content %></span>
+                  </div>
+                  <% if(locals.isLoggedIn) { %>
+                    <%   if (locals.currentUser.username === comment.user.username) {%>
+                      <form class="delete-form" style="display:inline;" method="POST" action="/posts/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
+                        <button class="delete-button">x</button>
+                      </form>
+                    <% } %>
+                  <% } %>
+                </li>
+              <% }) %>
+            </ul>
+          </div>
+          <div class="comment-bottom">
+            <h4 class="column is-12 date"><%= time.toDateString() %></h4>
+            <% if(locals.isLoggedIn) { %>
+              <div>
+                    <form id="comment-form" method="POST" action="/posts/<%= _id %>/comments">
+                      <input id="comment-box" placeholder="Add a comment..." name="content">
+                      <input name='user' value='<%= locals.currentUser._id %>' hidden/>
+                      <button hidden></button>
+                    </form>
+                    <% } %>
+              </div>
+            </div>
         </div>
-      </div>
-      <ul>
-        </ul>
-        <div>
-          <form id="comment-form" method="POST" action="/posts/<%= _id %>/comments">
-            <input placeholder="Comment" name="content">
-            <input name='user' value='<%= locals.currentUser._id %>' hidden/>
-            <button></button>
-          </form>
-          <% } %>
         </div>
-      </div>
-    </div>

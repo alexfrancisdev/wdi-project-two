@@ -18,7 +18,7 @@
 
 .map-left{
   width: 20vw;
-  height: 40vh;
+  height: 50vh;
   transform: skew(-20deg) rotate(-20deg);
   background: #ff6c5f;
   margin-right: 5%;
@@ -26,7 +26,7 @@
 
 .map-center{
   width: 20vw;
-  height: 40vh;
+  height: 50vh;
   transform: skew(20deg) rotate(20deg);
   background: #ffc168;
   margin-right: 5%;
@@ -37,7 +37,7 @@
 
 .map-right{
   width: 20vw;
-  height: 40vh;
+  height: 50vh;
   transform: skew(-20deg) rotate(-20deg);
   background: #2dde98;
 }

@@ -35,3 +35,19 @@ Once I had this planned out progress building the app was swift.
 
 ## Wireframes
 Wire frames were provided to us as part of the brief of the project. These wireframes were meant to be used as a guideline and could be modified as we added features beyond the scope of the initial brief.
+
+## Functionality
+
+## Screenshots
+
+## Bugs
+
+## Wins and Blockers
+
+## Future Content and Features
+There are a number of features I would add if I were to revisit this project or had more time:
+- Implement likes on posts
+- Following users
+- Better backend authentication
+- Password encryption
+- Admin account privileges 

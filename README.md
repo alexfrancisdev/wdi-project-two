@@ -44,30 +44,28 @@ Wire frames were provided to us as part of the brief of the project. These wiref
 ## Functionality
 
 ## Screenshots
-
-** Home **
-
+**Home**
 ![home](/screenshots/home.png)
 
-** Register **
+**Register**
 ![register](/screenshots/register.png)
 
-** Login **
+**Login**
 ![login](/screenshots/login.png)
 
-** Explore **
+**Explore**
 ![explore](/screenshots/explore.png)
 
-** New Post (Demonstrating Google Maps Autofill) **
+**New Post (Demonstrating Google Maps Autofill)**
 ![new](/screenshots/new-post.png)
 
-** View Post **
+**View Post**
 ![show](/screenshots/show.png)
 
-** View Profile **
+**View Profile**
 ![profile](/screenshots/profile.png)
 
-** Edit Profile **
+**Edit Profile**
 ![edit profile button](/screenshots/edit-profile-button.png)
 When you view your own profile page a button to edit your profile is visible. When clicked it takes the user to an edit form
 

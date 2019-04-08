@@ -44,7 +44,9 @@ Wire frames were provided to us as part of the brief of the project. These wiref
 ## Functionality
 
 ## Screenshots
+
 ** Home **
+
 ![home](/screenshots/home.png)
 
 ** Register **

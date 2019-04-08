@@ -39,7 +39,7 @@ I began planning my project by considering the general user interaction on the s
 Once I had this planned out progress building the app was swift.
 
 ## Wireframes
-Wire frames were provided to us as part of the brief of the project. These wireframes were meant to be used as a guideline and could be modified as we added features beyond the scope of the initial brief. The wireframes can be found ![here](https://imgur.com/a/R4TRpqK).
+Wire frames were provided to us as part of the brief of the project. These wireframes were meant to be used as a guideline and could be modified as we added features beyond the scope of the initial brief. The wireframes can be found [here](https://imgur.com/a/R4TRpqK).
 
 ## Functionality
 

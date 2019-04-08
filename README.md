@@ -1,4 +1,6 @@
-# **Project 2: Travelgram** <img align="right" src="https://camo.githubusercontent.com/6ce15b81c1f06d716d753a61f5db22375fa684da/68747470733a2f2f67612d646173682e73332e616d617a6f6e6177732e636f6d2f70726f64756374696f6e2f6173736574732f6c6f676f2d39663838616536633963333837313639306533333238306663663535376633332e706e67"/>
+# ![GA](https://camo.githubusercontent.com/6ce15b81c1f06d716d753a61f5db22375fa684da/68747470733a2f2f67612d646173682e73332e616d617a6f6e6177732e636f6d2f70726f64756374696f6e2f6173736574732f6c6f676f2d39663838616536633963333837313639306533333238306663663535376633332e706e67) **Project 2: Travelgram**
+
+[Launch project on Heroku](https://shrouded-dusk-48911.herokuapp.com/)
 
 ## Overview
 Travelgram is a travel-focused social web application that uses MongoDB, Express and Node.js to store user data and posts to the network. It utilises user authentication to register and login users to allow them to create and edit their own profiles, create new posts, and comment on posts.
@@ -50,4 +52,4 @@ There are a number of features I would add if I were to revisit this project or 
 - Following users
 - Better backend authentication
 - Password encryption
-- Admin account privileges 
+- Admin account privileges

@@ -30,17 +30,48 @@ To create a instagram clone that meets the following technical requirements:
 - Express
 - Node.js
 
+#### API Used
+- Google Maps JS
+
 ## Approach Taken
 I began planning my project by considering the general user interaction on the site, routes that would be required to implement the project, and models (fields, data types, and models needed).
 
 Once I had this planned out progress building the app was swift.
 
 ## Wireframes
-Wire frames were provided to us as part of the brief of the project. These wireframes were meant to be used as a guideline and could be modified as we added features beyond the scope of the initial brief.
+Wire frames were provided to us as part of the brief of the project. These wireframes were meant to be used as a guideline and could be modified as we added features beyond the scope of the initial brief. The wireframes can be found ![here](https://imgur.com/a/R4TRpqK).
 
 ## Functionality
 
 ## Screenshots
+** Home **
+![home](/screenshots/home.png)
+
+** Register **
+![register](/screenshots/register.png)
+
+** Login **
+![login](/screenshots/login.png)
+
+** Explore **
+![explore](/screenshots/explore.png)
+
+** New Post (Demonstrating Google Maps Autofill) **
+![new](/screenshots/new-post.png)
+
+** View Post **
+![show](/screenshots/show.png)
+
+** View Profile **
+![profile](/screenshots/profile.png)
+
+** Edit Profile **
+![edit profile button](/screenshots/edit-profile-button.png)
+When you view your own profile page a button to edit your profile is visible. When clicked it takes the user to an edit form
+
+![edit profile](/screenshots/edit-profile.png)
+
+
 
 ## Bugs
 
@@ -49,6 +80,7 @@ Wire frames were provided to us as part of the brief of the project. These wiref
 ## Future Content and Features
 There are a number of features I would add if I were to revisit this project or had more time:
 - Implement likes on posts
+- Hosting images using an API rather than relying on users entering url strings.
 - Following users
 - Better backend authentication
 - Password encryption
